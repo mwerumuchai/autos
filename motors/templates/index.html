@@ -1,5 +1,79 @@
-{% extends 'base.html'%} {% load bootstrap3 %} {% load staticfiles %} {% block content %}<br>
-<div class="container" id="editprofiles">
-  xdcfgvbhn
+{% extends 'base.html'%} {% load bootstrap3 %} {% load static %} {% block content %}<br>
+<div class="container">
+
+  <!-- Adding a search form -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+      <form action="{% url 'index' %}">
+        <div class="input-group">
+          <input type="text" autocorrect="off" id="search" name="motors" data-test="search-input-input" placeholder="Search for a jeep" tabindex="3" value="">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- search form end -->
+  <hr>
+  <!-- GALLERY -->
+  <div id="cherokee" class="container">
+    <div class="row1">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h2>Cherokee</h2>
+        <h4>The Grand Cherokee Summit sets the standard as the most luxurious vehicle in its class 18. It features superior comfort and convenience with a 19-speaker Harman Kardon® Premium Audio System, exclusive exterior and more.</h4>
+        <button type="button" class="btn btn-outline-danger">More Details <span>&#8594;</span></button>
+      </div>
+
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <span><img style="float:right;" src="/static/images/cherokee.jpg" alt="cherokee" width="245px" height="390px"class="img-responsive center-block">
+    </div>
+  </div>
+  <br><hr>
+  <!-- div two -->
+  <div id="cherokee" class="container">
+    <div class="row1">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <span><img style="float:right;" src="/static/images/wrangler.jpg" alt="cherokee" width="245" height="390"class="img-responsive center-block">
+
+      </div>
+
+    </div>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <h2>Wrangler</h2>
+    <h4>The Grand Cherokee Summit sets the standard as the most luxurious vehicle in its class 18. It features superior comfort and convenience with a 19-speaker Harman Kardon® Premium Audio System, exclusive exterior and more.</h4>
+    <button type="button" class="btn btn-outline-danger">More Details <span>&#8594;</span></button>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <!-- div three -->
+  <div id="cherokee" class="container">
+    <div class="row1">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h2>Wrangler Unlimited</h2>
+        <h4>The Grand Cherokee Summit sets the standard as the most luxurious vehicle in its class 18. It features superior comfort and convenience with a 19-speaker Harman Kardon® Premium Audio System, exclusive exterior and more.</h4>
+        <button type="button" class="btn btn-outline-danger">More Details <span>&#8594;</span></button>
+      </div>
+
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <span><img style="float:right;" src="/static/images/wrangler-unlimited.jpg" alt="cherokee" width="245" height="390"class="img-responsive center-block">
+    </div>
+  </div>
+  <br><hr>
+  <!-- div four -->
+  <div id="cherokee" class="container">
+    <div class="row1">
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+        <span><img style="float:right;" src="/static/images/renegade.jpg" alt="cherokee" width="245" height="390"class="img-responsive center-block">
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <h2>Renegade</h2>
+      <h4>The Grand Cherokee Summit sets the standard as the most luxurious vehicle in its class 18. It features superior comfort and convenience with a 19-speaker Harman Kardon® Premium Audio System, exclusive exterior and more.</h4>
+      <button type="button" class="btn btn-outline-danger">More Details <span>&#8594;</span></button>
+    </div>
+  </div>
+  <br>
 </div>
 {% endblock %}

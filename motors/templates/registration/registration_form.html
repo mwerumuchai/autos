@@ -7,37 +7,47 @@
       {% if form.errors %}
       <p> Some Information Might be Incorrect </p>
       {% endif %}
-      <div class="panel panel-default">
-
-        <div class="panel-heading">
-          <!-- <h5 class="text-center"><img src="/static/img/grambname.png" alt="logo" width="100"></h5> -->
-        </div>
-        <div class="form-group">
-          <h6><input type="submit" class="btn btn-primary btn-block" value="Log in with Facebook"></h6>
-        </div>
-        <div class="panel-body" id="help-block">
-
-          <form action="/accounts/register/" method="post">
-            {% csrf_token %} {% bootstrap_form form %}
-            <div class="form-group">
-              <h6><input type="submit" class="btn btn-primary btn-block" value="Sign Up"></h6>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Autos</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
             </div>
+            <div class="modal-body">
+              <div class="panel-body" id="help-block">
 
-            <input type="hidden" name="next" value="{{next}}">
+                <form action="/accounts/register/" method="post">
+                  {% csrf_token %} {% bootstrap_form form %}
+                  <div class="form-group">
+                    <h6><input type="submit" class="btn btn-primary btn-block" value="Sign Up"></h6>
+                  </div>
 
-          </form>
+                  <input type="hidden" name="next" value="{{next}}">
 
+                </form>
+                <h5>By signing up, you agree to our <strong>Terms</strong> & <strong>Privacy Policy.</strong></h5>
+                <h5>Have an account? <a href="/accounts/login">Log in</a> </h5>
+              </div>
+            </div>
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
-        <h5 class="text-center">By signing up, you agree to our <strong>Terms</strong> & <strong>Privacy Policy.</strong></h5>
       </div>
-      <div class="panel panel-default">
-        <h5>Have an account? <a href="/accounts/login">Log in</a> </h5>
-      </div>
-
     </div>
-    <!-- empty div -->
-    <div class="col-md-4"></div>
+    <!-- end of modal -->
+
+
   </div>
+  <!-- empty div -->
+  <div class="col-md-4"></div>
+</div>
 </div>
 <footer>
 
