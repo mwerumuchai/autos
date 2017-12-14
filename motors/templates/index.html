@@ -1,6 +1,6 @@
 {% extends 'base.html'%} {% load bootstrap3 %} {% load static %} {{block.super}} {% block content %}<br>
 <div class="container-fluid" id="coverphoto">
-  <form action="{% url 'index' %}">
+  <form action="{% url 'search_results' %}">
     <div class="input-group">
       <input type="text" autocorrect="off" id="search" name="motors" data-test="search-input-input" placeholder="Search for a jeep" tabindex="3" value="">
     </div>
