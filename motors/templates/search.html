@@ -1,0 +1,40 @@
+{%extends 'base.html'%} {% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <ul>
+      {% for category in categories%}
+      <div class="col-md-1">
+        <a href="{% url 'tag' tag.id%}"><img src="{{tag.image.url}}" alt="{{tag.name}}" height="40px" width="100%"></a> {{tag.name}}
+      </div>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<div class="container">
+
+  <div class="row text-left">
+    <h2><strong>{{message}} Images</strong></h2><br>
+    <h3>{{gallery.count}} free {{message}} images</h3>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="photo-div">
+
+    {% for gallery_item in gallery %}
+    <div class="image-container">
+      <a href="{% url 'gallery' gallery_item.id %}">
+        <div class="none"></div>
+        <img src="{{gallery_item.image.url}}" alt="Image" class="img-responsive home-image">
+      </a>
+    </div>
+    {% empty %}
+    <div class="row">
+      <h2 class="text-center">There are no images</h2>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+</div>
+
+{% endblock %}
