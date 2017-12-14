@@ -37,3 +37,21 @@ def single_vehicle(request,pk):
     return render(request, 'vehicle/vehicles_details.html', {"vehicles":vehicles})
 
 # search photos
+def search_results(request):
+    '''
+    Function that gets all the searched vehicle by name
+    '''
+
+    if 'motors' in request.GET and request.GET["motors"]:
+        search_term = request.GET.get("motors")
+        searched_vehicles = Vehicle.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"searched_vehicles": searched_vehicles})
+    else:
+        message = "No Vehicles searched"
+        title = 'Search Results'
+        return render(request, 'search.html',{"message":message})
+
+
+# contact
