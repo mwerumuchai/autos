@@ -20,11 +20,12 @@ def logout(request):
     return render(request, 'index.html')
 
 # VEHICLE
-def vehicle(request):
+def vehicle(request,category_id):
     '''
     Function that gets a list of specific vehicles from a category
     '''
-    vehicles = Vehicle.get_vehicles()
+
+    vehicles = Vehicle.objects.filter(category=category_id)
 
     return render(request, 'vehicle/vehicles.html', {"vehicles":vehicles})
 
@@ -52,6 +53,3 @@ def search_results(request):
         message = "No Vehicles searched"
         title = 'Search Results'
         return render(request, 'search.html',{"message":message})
-
-
-# contact

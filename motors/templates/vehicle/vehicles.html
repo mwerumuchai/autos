@@ -1,8 +1,8 @@
 {% extends 'vehicle/base.html' %} {% load bootstrap3 %} {% load static %} {% load ratings%} {% block content %} <br>
 <div class="container" id="landing"><br> {% for vehicle in vehicles %}
-  <h2> {{ vehicle.name}}</h2> <br>
-  <a href="/"><img src="{{vehicle.image.url}}" class="img-responsive" alt="Image"></a>
-  <h4>{{vehicle.description}}</h4>
+  <h2> {{ vehicle.vehicle_name}}</h2> <br>
+  <a href="/"><img src="{{vehicle.vehicle_image.url}}" class="img-responsive" alt="Image"></a>
+  <h4>{{vehicle.vehicle_description}}</h4>
   <hr>
   <!-- Ratings -->
   {% ratings vehicle %}
