@@ -1,6 +1,4 @@
 from django.db import models
-# from django.contrib.contenttypes.fields import GenericRelation
-# from star_ratings.models import Rating
 
 # Create your models here.
 class Category(models.Model):
@@ -32,9 +30,7 @@ class Vehicle(models.Model):
     name = models.CharField(max_length=150,blank=False)
     image = models.ImageField(upload_to = 'motors-photos/',blank=False)
     description = models.TextField(max_length=600)
-    # ratings = GenericRelation(Rating, related_query_name='vehicles')
 
-    # Vehicle.objects.filter(ratings__isnull=False).order_by('ratings__average')
 
     @classmethod
     def get_vehicles(cls):
@@ -51,6 +47,12 @@ class Vehicle(models.Model):
     def image_url(self):
         if self.image and hasattr(self.image, 'url'):
             return self.image.url
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        vehicles = cls.objects.filter(name__icontains=search_term)
+        return vehicles
+
 
     def __str__(self):
         return self.name
