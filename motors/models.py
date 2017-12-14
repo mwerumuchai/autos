@@ -27,9 +27,10 @@ class Category(models.Model):
 
 
 class Vehicle(models.Model):
-    name = models.CharField(max_length=150,blank=False)
-    image = models.ImageField(upload_to = 'motors-photos/',blank=False)
-    description = models.TextField(max_length=600)
+    vehicle_name = models.CharField(max_length=150,blank=False)
+    vehicle_image = models.ImageField(upload_to = 'motors-photos/',blank=False)
+    vehicle_description = models.TextField(max_length=600)
+    category = models.ForeignKey(Category)
 
 
     @classmethod
@@ -45,8 +46,8 @@ class Vehicle(models.Model):
 
     @property
     def image_url(self):
-        if self.image and hasattr(self.image, 'url'):
-            return self.image.url
+        if self.vehicle_image and hasattr(self.vehicle_image, 'url'):
+            return self.vehicle_image.url
 
     @classmethod
     def search_by_title(cls,search_term):
@@ -55,7 +56,7 @@ class Vehicle(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return self.vehicle_name
 
 
 
