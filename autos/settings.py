@@ -33,6 +33,8 @@ LOGIN_REDIRECT_URL = ('/')
 # ratings
 STAR_RATINGS_RERATE = False
 
+# EmailField
+
 # Application definition
 
 INSTALLED_APPS = [
