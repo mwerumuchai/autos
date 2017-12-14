@@ -30,6 +30,9 @@ ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = ('/')
 
+# ratings
+STAR_RATINGS_RERATE = False
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'motors',
     'bootstrap3',
+    'star_ratings',
 ]
 
 MIDDLEWARE = [
