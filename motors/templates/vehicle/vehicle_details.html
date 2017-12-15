@@ -1,5 +1,54 @@
 {% extends 'vehicle/base.html' %} {% load bootstrap3 %} {% load static %} {% block content %} <br>
-<div class="container">
-  edrtfgvbhjnm
-</div>
-{% endblock %}
+<div class="container image-overlay">
+  <div class="panel panel-default image-panel">
+    <div class="panel-heading">
+      <a href="{% url 'vehicles' vehicledetails.id %}"><i class="fa fa-arrow-left" style="font-size:24px" aria-hidden="true"></i></a>
+      <!-- empity div -->
+      <div class="panel-body">
+        <div class="col-md-6 image-div">
+          <img src="{{vehicledetails.image.url}}" alt="Image" class="img-responsive image-detail">
+        </div>
+        <div class="col-md-6">
+          <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal">Download free</button></h5>
+          <ul style="list-style-type:none">
+            <h4><li><strong>Type:</strong> {{vehicledetails.vehicle}}</li>
+            <li><strong>Manufacturer:</strong> {{vehicledetails.manufacturer}}</li>
+            <li><strong>Model:</strong> {{vehicledetails.model}}</li>
+            <li><strong>Color:</strong> {{vehicledetails.color}}</li>
+            <li><strong>No of seats:</strong> {{vehicledetails.no_of_seats}}</li>
+            <li><strong>Engine:</strong> {{vehicledetails.engine}}</li>
+            <li><strong>Review:</strong> {{vehicledetails.description}}</li></h4>
+          </ul>
+          <h5 class="share text-right"><a href="#"><span class="glyphicon glyphicon-share-alt">Share</span></a>
+        <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-info-sign"></span> Info</button></h5>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <div class="modal-body">
+            <h3>Share</h3>
+            <div class="link">
+              <a href="{{image.url}}">Click Here</a>
+              <h4>{{vehicledetails.image.url}}</h4>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>{% endblock %}
+  <!-- footer -->
+  <div class="footer">
+    <br>
+    <span class="copy-right"> ©2017 Mweru Muchai Autos</span>
+    </div
