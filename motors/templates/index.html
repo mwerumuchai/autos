@@ -10,8 +10,8 @@
 
   <hr> {% for category_item in category %}
   <div id="cherokee" class="container">
-    <h4><strong><i>{{category_item.name}}</i></strong></h4>
-    <h5>{{category_item.description}}</h5>
+    <h3><strong><i>{{category_item.name}}</i></strong></h3>
+    <h4>{{category_item.description}}</h4>
     <a href="{% url 'index' %}"></a>
     <span><img src="{{category_item.image.url}}" alt="image" width="245" height="390"class="img-responsive">
     <button type="button" class="btn btn-outline-danger"><a href="{% url 'vehicles' category_item.id %}">More Details <span>&#8594;</span></a>
