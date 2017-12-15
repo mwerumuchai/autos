@@ -19,16 +19,26 @@
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navMain"><span class="glyphicon glyphicon-chevron-right" style="color:white;"></span>
           </button>
-          <a class="navbar-brand" href="/">Autos</a>
+          <a class="navbar-brand" href="/" style="color:white;font-size:36px;">Autos</a>
         </div>
         <div class="collapse navbar-collapse" id="navMain">
           <ul class="nav navbar-nav pull-right">
             <li class="active"><a href="/">Home</a></li>
             <li><a href="#">Collections</a></li>
-            <li><a href="#">Login</a></li>
-          </ul>
+            {% if user.is_authenticated %}
+            <ul class="nav navbar-nav" id="navigation" style="color: black;">
+            </ul>
         </div>
+
+        {% else %}
+        <li>
+          <a class='btn btn-default' href="/accounts/login">Login</a>
+        </li>
+
+        {% endif %}
+        </ul>
       </div>
+    </div>
     </div>
     <section class="banner" id="banner">
       <div class="container text-center">
