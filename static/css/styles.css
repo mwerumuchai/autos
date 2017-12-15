@@ -4,7 +4,12 @@ html {
 
 body {
   height: 100%;
-  background-color: #212121;
+  background-color: #fff;
+}
+
+.nav a {
+  color: white !important;
+  font-size: 1.5em !important;
 }
 
 #coverphoto {
@@ -14,6 +19,8 @@ body {
   -o-background-size: cover;
   background-size: cover;
   height: 55%;
+  margin-bottom: 7px;
+  margin-top: -78px;
 }
 
 /*body {
@@ -72,9 +79,9 @@ div.help-block {
   color: #737373;
 }
 
-.btn {
+/*.btn {
   margin-left: 355px;
-}
+}*/
 
 #search {
   width: 1000px;
