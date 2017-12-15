@@ -12,7 +12,7 @@ A user can:
 * Rate a car
 
 ### Deployed Site
- [Click here]
+ [Click here](https://mweru-autos.herokuapp.com/)
 
 #### Installation Requirements
 If you like it and would like to install it, clone it,follow the instructions :
