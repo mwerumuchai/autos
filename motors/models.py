@@ -51,7 +51,7 @@ class Vehicle(models.Model):
 
     @classmethod
     def search_by_title(cls,search_term):
-        vehicles = cls.objects.filter(name__icontains=search_term)
+        vehicles = cls.objects.filter(vehicle_name__icontains=search_term)
         return vehicles
 
 
@@ -61,7 +61,7 @@ class Vehicle(models.Model):
 
 
 class VehicleDetails(models.Model):
-    name = models.ForeignKey(Vehicle)
+    name = models.ForeignKey(Category)
     manufacturer = models.CharField(max_length=150, blank=False)
     model = models.CharField(max_length=150, blank=False)
     color = models.CharField(max_length=100,blank=False)
@@ -69,7 +69,20 @@ class VehicleDetails(models.Model):
     engine = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
     image = models.ImageField(upload_to = 'motors-photos/',blank=False)
+    vehicle = models.ForeignKey(Vehicle)
 
+
+    @classmethod
+    def get_vehicles_details(cls):
+        vehicles = Vehicle.objects.all()
+
+        return vehicles
+
+    @classmethod
+    def get_single_vehicle_details(cls, pk):
+        vehicles = cls.objects.get(pk=pk)
+
+        return vehicles
 
     def __str__(self):
-        return self.name
+        return self.model
