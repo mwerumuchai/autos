@@ -27,12 +27,13 @@
             <li><a href="#">Collections</a></li>
             {% if user.is_authenticated %}
             <ul class="nav navbar-nav" id="navigation" style="color: black;">
+              <li><a href="/">Logout</a></li>
             </ul>
         </div>
 
         {% else %}
         <li>
-          <a class='btn btn-default' href="/accounts/login">Login</a>
+          <a href="/accounts/register">Register/Login</a>
         </li>
 
         {% endif %}
@@ -41,7 +42,7 @@
     </div>
     </div>
     <section class="banner" id="banner">
-      <div class="container text-center">
+      <div class="container">
         <div class="row">
           <h1>JEEP® VEHICLES</h1>
         </div>

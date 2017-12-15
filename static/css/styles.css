@@ -23,6 +23,8 @@ body {
   margin-top: -78px;
 }
 
+#homepage {}
+
 /*body {
   background-color: #212121;
 }*/
@@ -33,6 +35,7 @@ body {
 
 #banner {
   color: #fff;
+  margin-left: 630px;
 }
 
 /***********************************************************************

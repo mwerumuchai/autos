@@ -6,17 +6,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> {% if title %}
-    <title>Instagram- {{title}}</title>
+    <title>Autos- {{title}}</title>
     {% else %}
-    <title>Instagram</title>
+    <title>Autos</title>
     {% endif %} {% block styles %} {% bootstrap_css%}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="shortcut icon" type="img/png" href="{% static 'images/logo.png' %}" /> {% endblock %}
   </head>
 
   <body>
-    {% include "navbar.html" %} {% block content %} {% endblock %} {% block scripts %}
+    {% include "navbar.html" %} {% block content %} {% endblock %} {% block scripts %} {% bootstrap_javascript %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    {% bootstrap_javascript %} {% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="{% static 'js/navbar.js' %}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% endblock %}
 
   </body>
 
