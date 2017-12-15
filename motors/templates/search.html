@@ -1,5 +1,4 @@
-{%extends 'base.html'%} {% block content %}
-
+{% extends 'base.html' %} {% load bootstrap3 %} {% load static %} {% load ratings%} {% block content %} <br>
 <div class="container">
   <div class="row text-left">
     <h2><strong>Autos images</strong></h2><br>
@@ -10,10 +9,15 @@
 <div class="container">
   <div class="col-md-12">
     <div class="photo-div">{% for vehicle in searched_vehicles %}
-      <h2> {{ vehicle.name}}</h2> <br>
-      <a href="/"><img src="{{vehicle.image.url}}" class="img-responsive" alt="Image"></a>
-      <h4>{{vehicle.description}}</h4>
+      <h2> {{ vehicle.vehicle_name}}</h2> <br>
+      <a href="/"><img src="{{vehicle.vehicle_image.url}}" class="img-responsive" alt="Image"></a>
+      <h4>{{vehicle.vehicle_description}}</h4>
       <hr> {% empty %}
+      <!-- Ratings -->
+      {% ratings searched_vehicles %}
+      <hr>
+      <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+      <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
       <div class="row">
         <h2 class="text-center">There are no images</h2>
       </div>
